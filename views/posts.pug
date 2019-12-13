@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  div.col-sm-1
+  div.col-sm-10
+    div.row
+      div.col-sm-4
+        form(method='POST' action='/posts/search')
+          div.form-group
+            label(for='userFilter') Filter by username:
+            input#userFilter.form-control.input-color(type='text' name='userFilter')
+          button.btn.btn-primary(type='submit') Filter
+    div.row
+
+      div.col-sm-12
+        h1= title
+
+
+
+        table(border='1').table-style.input-color
+          each post in post_list
+            tr
+              td(style='width:10%') #{post.timeStr}
+              td(style='width:15%' align='center') #{post.author}
+
+              td(style='width:75%') #{post.content}
+
+          else
+            th(style='width:100%') Nothing posted yet.
+
+  div.col-sm-1

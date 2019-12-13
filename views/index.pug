@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div.col-sm-1
+  div.col-sm-6.form-group
+    h3 Welcome to LITTER! <br> Please enter username, or leave empty for anonymous access.
+
+    form(method='POST' action='/login')
+      label(for='name') Username:
+      input#name.form-control(type='text', maxlength="15" , placeholder='Your name' name='username')
+      button.btn.btn-primary(type='submit') Login

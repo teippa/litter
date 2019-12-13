@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div.col-sm-1
+  div.col-sm-10
+    div.row
+      div.col-sm-6
+
+        form(method='POST' action='/user/newPost')
+          div.form-group
+            label(for='content') Insert thoughts here:
+            textarea#content.form-thoughts.input-color(maxlength="255" name='content')
+            button.btn.btn-primary(type='submit') Submit new post
+    div.row
+
+      div.col-sm-12
+        h1= title
+        
+
+        table(border='1').table-style.input-color
+          each post in post_list
+            tr
+              td(style='width:10%') #{post.timeStr}
+              td #{post.content}
+
+          else
+            td You have not posted anything yet.
+
+  div.col-sm-1  
