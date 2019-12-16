@@ -79,7 +79,7 @@ exports.urlbuilder = function() {
     }
   }
 
-  mongoURL = 'mongodb://localhost:27017';
+  //mongoURL = 'mongodb://localhost:27017';
   mongoURL = 'mongodb+srv://asd:asd@cluster0-xpytz.mongodb.net/test?retryWrites=true&w=majority';
   return mongoURL;
 };

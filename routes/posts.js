@@ -60,9 +60,10 @@ router.post(
     
     var filteredUser = req.body.userFilter;
 
+
     if (!filteredUser) {
       res.redirect('/posts');
-    } else if (filteredUser === 'clearDB') {
+    }/* else if (filteredUser === 'clearDB') {
       db.get().collection("posts").drop();
       res.redirect('/posts');
     }//*/
